@@ -17,6 +17,6 @@ To use you need send two arguments:
 For example:
 `go run main.go 1 data.csv`
 
-To create executable of your system use: `go build -o NAME`
-Then execute on linux `./NAME 1 data.csv`
-or execute on Windows `NAME.exe 1 data.csv`
+To create executable of your system use: `go build -o NAME` <br/>
+Then execute on linux `./NAME 1 data.csv` <br/>
+or execute on Windows `NAME.exe 1 data.csv` 
