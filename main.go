@@ -33,8 +33,9 @@ func main() {
 	fmt.Println(numLine)
 
 	// Abre o arquivo caso exista
+	argFile := os.Args[2]
 	fmt.Println("Start Go")
-	csvFile, err := os.Open("data.csv")
+	csvFile, err := os.Open(argFile)
 	if err != nil {
 		fmt.Println("Fail to open file", err)
 	}
