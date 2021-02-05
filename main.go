@@ -30,11 +30,11 @@ func main() {
 	// Converte o parametro de texto para inteiro
 	argLine := os.Args[1]
 	numLine, _ := strconv.ParseInt(argLine, 0, 64)
-	fmt.Println(numLine)
+	fmt.Println("I will check line:", numLine)
 
 	// Abre o arquivo caso exista
 	argFile := os.Args[2]
-	fmt.Println("Start Go")
+	fmt.Println("Start check, wait...")
 	csvFile, err := os.Open(argFile)
 	if err != nil {
 		fmt.Println("Fail to open file", err)
