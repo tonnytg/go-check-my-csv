@@ -5,50 +5,58 @@ import (
 	"fmt"
 	"os"
 	"reflect"
+	"strconv"
 	"strings"
 )
 
-type Student struct {
-	Blank1_____ string
-	Blank2_____ string
-	Blank3_____ string
-	Blank4_____ string
-	Blank5_____ string
-	Blank6_____ string
-	Blank7_____ string
-	Blank8_____ string
-	Blank9_____ string
-	Blank10____ string
-	Blank11____ string
-	Blank12____ string
-	Blank13____ string
-	Blank14____ string
+type myData struct {
+	Blank1______ string
+	Blank2______ string
+	Blank3______ string
+	Blank4o_____ string
+	Blank5o_____ string
+	Blank6o_____ string
+	Blank7______ string
+	Blank8______ string
+	Blank9o_____ string
+	Blank10_____ string
+	Blank11o____ string
+	Blank12o____ string
+	Blank13_____ string
+	Blank14_____ string
 }
 
 func main() {
+	// Converte o parametro de texto para inteiro
+	argLine := os.Args[1]
+	numLine, _ := strconv.ParseInt(argLine, 0, 64)
+	fmt.Println(numLine)
 
-	fmt.Println("Começando")
-	csvFile, err := os.Open("lista.csv")
+	// Abre o arquivo caso exista
+	fmt.Println("Start Go")
+	csvFile, err := os.Open("data.csv")
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Fail to open file", err)
 	}
 
-	fmt.Println("Sucesso ao abrir o arquivo")
+	// garante sucesso para encerrar após leitura
 	defer csvFile.Close()
-
+	// le todas as linhas do arquivo
 	csvLines, err := csv.NewReader(csvFile).ReadAll()
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Err to read file", err)
 	}
-	var j [14]string
-	for b, i := range strings.Split(csvLines[1][0], ";") {
+	// alimenta a array com os dados do csv, delimitado por ";"
+	var b [14]string
+	for i, j := range strings.Split(csvLines[numLine][0], ";") {
 		// fmt.Println(i)
-		j[b] = i
+		b[i] = j
 	}
-	s := Student{j[0], j[1], j[2], j[3], j[4], j[5], j[6], j[7], j[8], j[9], j[10], j[11], j[12], j[13]}
+	// pega os 14 campos do csv
+	s := myData{b[0], b[1], b[2], b[3], b[4], b[5], b[6], b[7], b[8], b[9], b[10], b[11], b[12], b[13]}
 	v := reflect.ValueOf(s)
 	typeOfS := v.Type()
-
+	// imprime cada valor coletado
 	for i := 0; i < v.NumField(); i++ {
 		fmt.Printf("%s: %v\n", typeOfS.Field(i).Name, v.Field(i).Interface())
 	}
