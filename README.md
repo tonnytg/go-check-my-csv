@@ -21,12 +21,12 @@ main.go           -> Source code of this project
 ```
 
 
-To use you need send two arguments:
+To use you need to send two arguments:
 `go run main.go LINE FILE`
 
 For example:
 `go run main.go 1 data.csv`
 
-To create executable of your system use: `go build -o check-my-csv` <br/>
+To create an executable of your system use: `go build -o check-my-csv` <br/>
 Then execute on linux `./check-my-csv 1 data.csv` <br/>
 or execute on Windows `check-my-csv.exe 1 data.csv` 
