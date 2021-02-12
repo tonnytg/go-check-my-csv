@@ -30,3 +30,6 @@ For example:
 To create an executable of your system use: `go build -o check-my-csv` <br/>
 Then execute on linux `./check-my-csv 1 data.csv` <br/>
 or execute on Windows `check-my-csv.exe 1 data.csv` 
+
+
+This project can help your to struc each column
