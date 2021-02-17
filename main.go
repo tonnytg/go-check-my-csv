@@ -9,6 +9,10 @@ import (
 	"strings"
 )
 
+// this struct need refact just like you need
+// Blank1___ -> Name string
+// Blank2___ -> Years int
+// Blank3___ -> Address string 
 type myData struct {
 	Blank1______ string
 	Blank2______ string
