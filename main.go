@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-// this struct need refact just like you need
+// PersonalInfo you can change this for what you need.
 type PersonalInfo struct {
 	Name        string
 	Surname     string
