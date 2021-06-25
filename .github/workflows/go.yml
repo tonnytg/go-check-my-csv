@@ -25,6 +25,8 @@ jobs:
       run: go test -v .
       
     - name: Official SonarQube Scan
+      env:
+        SONAR_TOKEN: {{ secrets.SONAR_TOKEN }}
       uses: SonarSource/sonarqube-scan-action@v1.0.0
       with:
         # Set the sonar.projectBaseDir analysis property
