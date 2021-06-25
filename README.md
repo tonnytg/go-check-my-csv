@@ -1,7 +1,13 @@
-# go-check-my-csv
-Application to check my csv
+# Extract of .CSV at one line
+Convert data of .csv to visible columns values
+<hr>
+
+![Codeinspector](https://www.code-inspector.com/project/24185/score/svg)
+
 
 This project help you to organize some information of your .csv <br />
+
+
 You can put Personal Information each line. <br />
 for example, convert this `1;2;3;4;5;6;7;8;9;10;11` to this:
 ```
