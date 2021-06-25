@@ -57,7 +57,7 @@ func ConvertCSVtoStruct(argFile string, numLine int64) error {
 }
 
 // ShowValues show values of conversion
-func ShowValues(csvLines [][]string, numLine int64)(string, error) {
+func ShowValues(csvLines [][]string, numLine int64) (string, error) {
 	// Use ; for delimiter information
 	var b [20]string
 	for i, j := range strings.Split(csvLines[numLine][0], ";") {
