@@ -50,14 +50,16 @@ func ConvertCSVtoStruct(argFile string, numLine int64) error {
 	if err != nil {
 		fmt.Errorf("error to read file: %v", err)
 	}
+	fmt.Printf("\nValor: %v \t Tipo: %T \n", csvLines, csvLines)
+
 	ShowValues(csvLines, numLine)
 	return nil
 }
 
 // ShowValues show values of conversion
-func ShowValues(csvLines [][]string, numLine int64) error {
+func ShowValues(csvLines [][]string, numLine int64)(string, error) {
 	// Use ; for delimiter information
-	var b [15]string
+	var b [20]string
 	for i, j := range strings.Split(csvLines[numLine][0], ";") {
 		b[i] = j
 	}
@@ -66,14 +68,15 @@ func ShowValues(csvLines [][]string, numLine int64) error {
 		b[3], b[4], b[5], b[6],
 		b[7], b[8], b[9], b[10],
 	}
-	fmt.Println(s)
+
 	v := reflect.ValueOf(s)
+
 	typeOfS := v.Type()
 	// print each value
 	for i := 0; i < v.NumField(); i++ {
 		fmt.Printf("%s: %v\n", typeOfS.Field(i).Name, v.Field(i).Interface())
 	}
-	return nil
+	return "ok", nil
 }
 
 func main() {
